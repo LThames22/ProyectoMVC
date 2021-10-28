@@ -6,7 +6,14 @@ namespace Juegos.Core
     {
         public int Id {get;set;}
         public string Nombre {get;set;}
-        public list<Juegos> Juegos 
+        public list<Juegos> Juego{get;set;}
+        public Desarrolladora()
+        {
+            Juego = new List<Juegos>();
+        }
+
+        public void AgregarJuego(Juegos juego)
+            => Juego.Add(juego);
 
     }
 }
