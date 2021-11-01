@@ -9,14 +9,7 @@ namespace Juegos.Core
         public datetime FechaEstreno {get;set;}
         public string Descripcion {get;set;}
         public float Peso {get;set;}
-        public List<Genero> Generos { get; set; }
-        public Juego()
-        {
-            Generos = new List<Genero>();
-        }
-
-        public void AgregarGenero(Genero generos)
-            => Generos.Add(generos);
+        public string Genero {get;set;}
         
     }
 }
