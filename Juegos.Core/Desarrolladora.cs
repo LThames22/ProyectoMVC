@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Juegos.Core
 {
@@ -6,13 +7,13 @@ namespace Juegos.Core
     {
         public int Id {get;set;}
         public string Nombre {get;set;}
-        public list<Juegos> Juego{get;set;}
+        public List<Juego> Juego{get;set;}
         public Desarrolladora()
         {
-            Juego = new List<Juegos>();
+            Juego = new List<Juego>();
         }
 
-        public void AgregarJuego(Juegos juego)
+        public void AgregarJuego(Juego juego)
             => Juego.Add(juego);
 
     }
