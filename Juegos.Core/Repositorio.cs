@@ -8,6 +8,8 @@ namespace Juegos.Core
         static int idDesarolladora = 1;
         static int idGenero = 1;
         static int idJuego = 1;
+        
+        #region genero
         static readonly List<Genero> generos = new List<Genero>(); 
         public static IEnumerable<Genero> Generos
         => generos;
@@ -16,8 +18,9 @@ namespace Juegos.Core
         public static void AgregarGenero(Genero genero)
         {
             genero.Id = idGenero++;
-            genero.Add(genero);
         }
+        #endregion
+        #region juego
         static readonly List<Juego> juegos = new List<Juego>(); 
         public static IEnumerable<Juego> Juegos
         => Juegos;
@@ -25,6 +28,7 @@ namespace Juegos.Core
         {
             juego.Id = idJuego++;
         }
+        #endregion
 
 
 
