@@ -18,6 +18,7 @@ namespace Juegos.Core
         public static void AgregarGenero(Genero genero)
         {
             genero.Id = idGenero++;
+            generos.Add(genero);
         }
         #endregion
         #region juego
