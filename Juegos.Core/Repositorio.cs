@@ -25,9 +25,12 @@ namespace Juegos.Core
         static readonly List<Juego> juegos = new List<Juego>(); 
         public static IEnumerable<Juego> Juegos
         => Juegos;
+        public static Juego GetJuego(int id)
+            => juegos.Find(j => j.Id == id);
         public static void AgregarJuego(Juego juego)
         {
             juego.Id = idJuego++;
+            juegos.Add(juego);
         }
         #endregion
 
