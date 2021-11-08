@@ -15,10 +15,5 @@ namespace Juegos.Core
 
         public void AgregarJuego(Juego juego)
             => Juego.Add(juego);
-
-        internal void Add(Genero genero)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
