@@ -10,39 +10,39 @@ namespace Juegos.Core
         static int idJuego = 1;
         
         #region genero
-        static readonly List<Genero> Generos = new List<Genero>(); 
+        static readonly List<Genero> generos = new List<Genero>(); 
         public static IEnumerable<Genero> Generos
-        => Generos;
+        => generos;
         public static Genero GetGenero(int id)
-            => Generos.Find(g => g.Id == id);
-        public static void AgregarGenero(Genero Genero)
+            => generos.Find(g => g.Id == id);
+        public static void AgregarGenero(Genero genero)
         {
-            Genero.Id = idGenero++;
-            Generos.Add(Genero);
+            genero.Id = idGenero++;
+            generos.Add(genero);
         }
         #endregion
         #region juego
-        static readonly List<Juego> Juegos = new List<Juego>(); 
+        static readonly List<Juego> juegos = new List<Juego>(); 
         public static IEnumerable<Juego> Juegos
-        => Juegos;
+        => juegos;
         public static Juego GetJuego(int id)
-            => Juegos.Find(j => j.Id == id);
-        public static void AgregarJuego(Juego Juego)
+            => juegos.Find(j => j.Id == id);
+        public static void AgregarJuego(Juego juego)
         {
-            Juego.Id = idJuego++;
-            Juegos.Add(Juego);
+            juego.Id = idJuego++;
+            juegos.Add(juego);
         }
         #endregion
         #region desarrolladora
-        static readonly List<Desarrolladora> Desarrolladoras = new List<Desarrolladora>(); 
+        static readonly List<Desarrolladora> desarrolladoras = new List<Desarrolladora>(); 
         public static IEnumerable<Desarrolladora> Desarrolladoras
-        => Desarrolladoras;
+        => desarrolladoras;
         public static Desarrolladora GetDesarrolladora(int id)
-            => Desarrolladoras.Find(d => d.Id == id);
-        public static void AgregarDesarrolladora(Desarrolladora Desarrolladora)
+            => desarrolladoras.Find(d => d.Id == id);
+        public static void AgregarDesarrolladora(Desarrolladora desarrolladora)
         {
-            Desarrolladora.Id = idDesarrolladora++;
-            Desarrolladoras.Add(Desarrolladora);
+            desarrolladora.Id = idDesarrolladora++;
+            desarrolladoras.Add(desarrolladora);
         }
         #endregion
 

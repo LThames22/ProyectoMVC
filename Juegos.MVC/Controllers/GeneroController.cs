@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using SuperSimple.Core;
+using Juegos.Core;
 
 namespace Juegos.MVC.Controllers
 {
@@ -12,7 +12,7 @@ namespace Juegos.MVC.Controllers
         [HttpGet]
         public IActionResult Detalle(int id)
         {
-            var Genero = Repositorio.GetCategoria(id);
+            var Genero = Repositorio.GetGenero(id);
             if (Genero is null)
             {
                 return NotFound();
@@ -24,9 +24,9 @@ namespace Juegos.MVC.Controllers
         public IActionResult FormAlta() => View();
 
         [HttpPost]
-        public IActionResult FormAlta(Categoria categoria)
+        public IActionResult FormAlta(Genero genero)
         {
-            Repositorio.ActualizarCategoria(Genero);
+            Repositorio.ActualizarGenero(Genero);
             return View("Index", Repositorio.Genero);
         }
     }
