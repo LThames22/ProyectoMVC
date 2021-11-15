@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Juegos.Core;
+using Juegos.MVC.ViewModels;
 
-namespace Juego.Controllers
+namespace Juego.MVC.Controllers
 {
     public class JuegoController: Controller
     {
@@ -22,23 +23,37 @@ namespace Juego.Controllers
         [HttpGet]
         public IActionResult FormAlta(int? idGenero)
         {
-            var vmJuego = new VMProducto(Repositorio.Generos)
+            var vmJuego = new VMJuego(Repositorio.Generos)
             {
                 IdGeneroSeleccionado = idGenero
             };
-            return View(vmJuego);
+            return View(VMJuego);
         }
 
         [HttpPost]
-        public IActionResult FormAlta(VMProducto vmJuego)
+        public IActionResult FormAlta(VMJuego vMJuego)
+        {
+            if (Validar(vMJuego))
+            {
+                var Genero = Repositorio.GetGenero(vMJuego.IdGeneroSeleccionado.Value);
+                vMJuego.Juego.AgregarJuego(vMJuego.juego);
+                FechaEstreno.AgregarJuego(vMJuego.Juego);
+                Descripcion.AgregarJuego(vMJuego.Juego);
+                Peso.AgregarJuego(vMJuego.Juego);
+            }
+            return View("Index", Repositorio.Juegos);          
+        }
+        [HttpPost]
+        public IActionResult Modificar(VMJuego vmJuego)
         {
             if (Validar(vmJuego))
             {
-                var Genero = Repositorio.GetGenero(vmJuego.IdGeneroSeleccionado.Value);
-                vmJuego.Juego.AgregarJuego(vmJuego.juego);
-                FechaEstreno.AgregarJuego(vmJuego.Juego);
-                Descripcion.AgregarJuego(vmJuego.Juego);
-                Peso.AgregarJuego(vmJuego.Juego);
+                var juego = Repositorio.GetProducto(vmJuego.Juego.Id);
+                if (juego is null)
+                {
+                    return NotFound();
+                }
+                vmJuego.Actualizar(juego);
             }
             return View("Index", Repositorio.Juegos);
         }

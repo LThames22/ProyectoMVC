@@ -24,9 +24,9 @@ namespace Juegos.MVC.Controllers
         public IActionResult FormAlta() => View();
 
         [HttpPost]
-        public IActionResult FormAlta(Genero genero)
+        public IActionResult FormAlta(Genero Genero)
         {
-            Repositorio.ActualizarGenero(Genero);
+            Repositorio.AgregarGenero(Genero);
             return View("Index", Repositorio.Genero);
         }
     }

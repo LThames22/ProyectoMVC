@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 
+
 namespace Juegos.Core
 {
     public class Desarrolladora
