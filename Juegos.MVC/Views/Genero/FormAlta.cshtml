@@ -1,20 +1,19 @@
-﻿@model SuperSimple.Core.Categoria
+﻿@model Juegos.Core.Genero
 @{
     Layout = null;
 }
 <!DOCTYPE html>
-<html>
 <head>
-    <title>Mercado Simple - Categorias</title>
+    <title>Juego Genero</title>
 </head>
 <body>
     <form asp-action="FormAlta" method="post">
         <div asp-validation-summary="All"></div>
         <div>
-            <label asp-for="Nombre">Nombre:</label>
+            <label asp-for="Nombre">GENEROS:</label>
             <input asp-for="Nombre" />
         </div>
-        <button type="submit">Alta Categoria</button>
+        <button type="submit">Alta Genero</button>
     </form>
 </body>
 </html>

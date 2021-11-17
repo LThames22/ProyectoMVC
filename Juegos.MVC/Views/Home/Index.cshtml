@@ -1,8 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = null;
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juegos</title>
+</head>
+<body> 
+    <a asp-controller="Genero" asp-action="Index">Ver Generos</a><br />
+    <a asp-controller="Genero"asp-action="FormAlta">Alta Genero</a>
+<br/>
+<br/>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <a asp-controller="Juego" asp-action="Index">Ver Juegos</a><br />
+    <a asp-controller="Juego"asp-action="FormAlta">Alta Juego</a>
+
+</body>
+</html>

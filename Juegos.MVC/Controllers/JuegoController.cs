@@ -2,60 +2,42 @@ using Microsoft.AspNetCore.Mvc;
 using Juegos.Core;
 using Juegos.MVC.ViewModels;
 
-namespace Juego.MVC.Controllers
+namespace Juego.Controllers
 {
-    public class JuegoController: Controller
+    public class JuegoController : Controller
     {
+
         [HttpGet]
         public IActionResult Index()
-            => View(Repositorio.Juegos);
-        
+        => View(Repositorio.Juegos);
+
+        [HttpGet]
         public IActionResult Detalle(int id)
         {
-            var juego = Repositorio.GetJuego(id);
-            if (juego is null)
+            var Juego = Repositorio.GetJuego(id);
+            if (Juego is null)
             {
                 return NotFound();
             }
-            return View(juego);
+            return View(Juego);
         }
-
         [HttpGet]
+
         public IActionResult FormAlta(int? idGenero)
         {
-            var vmJuego = new VMJuego(Repositorio.Generos)
+            var vmJuego= new VMJuego(Repositorio.Generos)
             {
-                IdGeneroSeleccionado = idGenero
+            IdGeneroSeleccionado = idGenero
             };
-            return View(VMJuego);
+            return View(vmJuego);
         }
 
         [HttpPost]
-        public IActionResult FormAlta(VMJuego vMJuego)
+
+        public IActionResult FormAlta(Juego juego)
         {
-            if (Validar(vMJuego))
-            {
-                var Genero = Repositorio.GetGenero(vMJuego.IdGeneroSeleccionado.Value);
-                vMJuego.Juego.AgregarJuego(vMJuego.juego);
-                FechaEstreno.AgregarJuego(vMJuego.Juego);
-                Descripcion.AgregarJuego(vMJuego.Juego);
-                Peso.AgregarJuego(vMJuego.Juego);
-            }
-            return View("Index", Repositorio.Juegos);          
-        }
-        [HttpPost]
-        public IActionResult Modificar(VMJuego vmJuego)
-        {
-            if (Validar(vmJuego))
-            {
-                var juego = Repositorio.GetProducto(vmJuego.Juego.Id);
-                if (juego is null)
-                {
-                    return NotFound();
-                }
-                vmJuego.Actualizar(juego);
-            }
-            return View("Index", Repositorio.Juegos);
+            Repositorio.AgregarJuego(juego);
+            return View("index", Repositorio.Juegos);
         }
     }
 }
