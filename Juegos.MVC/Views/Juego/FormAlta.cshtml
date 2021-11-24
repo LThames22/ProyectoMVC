@@ -1,4 +1,4 @@
-﻿@model Juegos.ViewModels.VMProducto;
+﻿@model Juegos.MVC.ViewModels.VMJuego;
 @{
     Layout = null;
 }
@@ -25,7 +25,7 @@
         <div>
             <select asp-for="IdGeneroSeleccionado">
                 <option value="">Elegi una opción</option>
-                @foreach (Juegos.Core.Genero genero in Model.generos)
+                @foreach (Juegos.Core.Genero genero in Model.Generos)
                 {
                     <option value="@genero.Id">@genero.Nombre</option>
                 }
