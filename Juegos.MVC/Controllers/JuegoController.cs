@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Juegos.Core;
 using Juegos.MVC.ViewModels;
 
-namespace Juego.Controllers
+namespace Juegos.MVC.Controllers
 {
     public class JuegoController : Controller
     {
