@@ -1,0 +1,20 @@
+﻿@model Juegos.Core.Producto
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle @Model.Nombre</title>
+</head>
+<body>
+    <div>
+        <h3>@Model.Nombre</h3>
+        Fecha de estreno: @Model.FechaEstreno<br>
+        Descripcion: @Model.Descripcion<br>
+        Peso: @Model.Peso<br />
+        Genero: @Model.Genero<br />
+    </div>
+    <hr />
+</body>
+</html>
