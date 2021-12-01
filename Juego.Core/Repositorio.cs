@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Juegos.Core
+namespace Juego.Core
 {
     public static class Repositorio
     {

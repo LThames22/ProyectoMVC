@@ -6,13 +6,13 @@ namespace Juegos.MVC.ViewModels
     public class VMJuego
     {
         public IEnumerable<Genero> Generos { get; set; }
-        public Juego Juego { get; set; }
+        public Juegos Juego { get; set; }
         public int? IdGeneroSeleccionado { get; set; }
-        public VMPJuego() => Juego = new Juego();
+        public VMJuego() => Juego = new Juegos();
         public VMJuego(IEnumerable<Genero> generos) : this()
             => Generos = generos;
 
-        public VMJuego(Juego juego)
+        public VMJuego(Juegos juego)
         {
             Juego = juego;
         }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Juegos.Core
+namespace Juego.Core
 {
     public class Juego
     {
