@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Juego.Core
+namespace Juegos.Core
 
 {
     public class Genero
